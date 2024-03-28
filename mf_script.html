@@ -1,0 +1,54 @@
+<script>
+jQuery(function ($) { 
+	$(document).ready(function(){
+
+	$('#fullpage').fullpage({
+	<block cond="$li->fullpage_select == 'bgcolor'">
+		sectionsColor:['{$li->section0_color}', '{$li->section1_color}', '{$li->section2_color}'],
+	</block>
+	<block cond="$li->menu_user == 'Y'">
+		menu:'#menu',
+		anchors:['{$li->one_title}', '{$li->two_title}', '{$li->three_title}'],
+	</block>
+		verticalCentered:{$li->area_location},
+		easing: '{$li->easing_effect}',
+		css3: {$li->css3_user},
+		easingcss3: 'ease',
+		navigation:{$li->navigation_user},
+		slidesNavigation:{$li->navi_down_user},
+		scrollOverflow:{$li->scroll_user},
+		controlArrows:{$li->control_arrows_user},
+		continuousVertical:{$li->loop_user},
+		scrollingSpeed: 1000,
+		controlArrowColor: '{$li->rl_arrows_color}',
+	<block cond="$li->tooltips_user == 'true' && !Mobile::isMobileCheckByAgent()">
+		navigationTooltips: ['{$li->one_title}', '{$li->two_title}', '{$li->three_title}'],
+		showActiveTooltip: {$li->tooltips_user},
+	</block>
+		scrollBar: {$li->scrollbar_user},
+		licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+	<block cond="$li->smart_fullpage == 'Y'">
+		responsiveWidth: 480,
+		afterResponsive: function(isResponsive){
+		}
+	</block>
+	<block cond="$li->onepage == 'Y'">
+		responsiveWidth: 10000,
+		afterResponsive: function(isResponsive){
+		}
+	</block>
+	});
+
+	<block cond="$li->control_arrows_user == 'true'">
+		$('#moveSectionUp').click(function(e){
+			e.preventDefault();
+			$.fn.fullpage.moveSectionUp();
+		});
+		$('#moveSectionDown').click(function(e){
+			e.preventDefault();
+			$.fn.fullpage.moveSectionDown();
+		});
+	</block>
+	});
+});
+</script>

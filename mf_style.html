@@ -1,0 +1,87 @@
+{@ Context::addMetaTag('theme-color', '#1583AF'); }
+{@ $li = $layout_info; }
+<load target="css/fullpage.css" />
+<load target="css/animate.css" />
+<load target="js/fullpage.min.js" />
+<load target="js/easings.min.js" />
+<load target="js/layout.js" />
+<load cond="$li->scroll_user == 'true'" target="js/scrolloverflow.min.js" />
+
+<block cond="$li->add_header">{$li->add_header}</block>
+<block cond="!$li->scroll_user_gap">{@ $li->scroll_user_gap = '150'}</block>
+<block cond="!$li->rl_arrows_color">{@ $li->rl_arrows_color = '#fff'}</block>
+<block cond="!$li->tbg_color">{@ $li->tbg_color = '#000'}</block>
+<block cond="!$li->bbg_color">{@ $li->bbg_color = '#000'}</block>
+<block cond="!$li->section0_color">{@ $li->section0_color = '#5b927d'}</block>
+<block cond="!$li->section1_color">{@ $li->section1_color = '#f3b96c'}</block>
+<block cond="!$li->section2_color">{@ $li->section2_color = '#674172'}</block>
+<block cond="!$li->title_size">{@ $li->title_size = '2em'}</block>
+<block cond="!$li->title_color">{@ $li->title_color = '#fff'}</block>
+<block cond="!$li->subtitle_size">{@ $li->subtitle_size = '1.3em'}</block>
+<block cond="!$li->subtitle_color">{@ $li->subtitle_color = '#fff'}</block>
+<block cond="!$li->content_width">{@ $li->content_width = '100%'}</block>
+<block cond="!$li->content_color">{@ $li->content_color = 'transparent'}</block>
+<block cond="!$li->html0_width">{@ $li->html0_width = '100%'}</block>
+<block cond="!$li->html0_color">{@ $li->html0_color = 'transparent'}</block>
+<block cond="!$li->html1_1_width">{@ $li->html1_1_width = '100%'}</block>
+<block cond="!$li->html1_1_color">{@ $li->html1_1_color = 'transparent'}</block>
+<block cond="!$li->html1_2_width">{@ $li->html1_2_width = '100%'}</block>
+<block cond="!$li->html1_2_color">{@ $li->html1_2_color = 'transparent'}</block>
+<block cond="!$li->html2_width">{@ $li->html2_width = '100%'}</block>
+<block cond="!$li->html2_color">{@ $li->html2_color = 'transparent'}</block>
+<block cond="!$li->one_title">{@ $li->one_title = '1st'}</block>
+<block cond="!$li->two_title">{@ $li->two_title = '2nd'}</block>
+<block cond="!$li->three_title">{@ $li->three_title = '3rd'}</block>
+
+<style>
+.mf_section { <!--@if($li->area_location == 'false')-->padding-top:70px;<!--@end-->}
+.f_title { font-size:{$li->title_size}; color:{$li->title_color}; margin-bottom:10px; }
+.intro { <!--@if($li->scroll_user == 'true')-->padding:{$li->scroll_user_gap}px 0<!--@end-->; }
+.f_subtitle { font-size:{$li->subtitle_size}; color:{$li->subtitle_color}; }
+.content_area { width:{$li->content_width}; padding:10px; background-color:{$li->content_color}; <!--@if($li->content_radius == '')-->-webkit-border-radius:10px;-moz-border-radius:10px; border-radius:10px;<!--@end--> <block cond="$li->content_shadow == 'Y'">box-shadow:0 0 5px #330000; </block>; }
+
+#html_area0 { width:{$li->html0_width}; background-color:{$li->html0_color}; text-align:left; <!--@if($li->html0_radius == '')-->-webkit-border-radius:10px;-moz-border-radius:10px; border-radius:10px;<!--@end--> <block cond="$li->html0_shadow == 'Y'">box-shadow:0 0 5px #330000; </block> }
+#html_area1_1 { width:{$li->html1_1_width}; background-color:{$li->html1_1_color}; text-align:left; <!--@if($li->html1_1_radius == '')-->-webkit-border-radius:10px;-moz-border-radius:10px; border-radius:10px;<!--@end--> <block cond="$li->html1_1_shadow == 'Y'">box-shadow:0 0 5px #330000; </block> }
+#html_area1_2 { width:{$li->html1_2_width}; background-color:{$li->html1_2_color}; text-align:left; <!--@if($li->html1_2_radius == '')-->-webkit-border-radius:10px;-moz-border-radius:10px; border-radius:10px;<!--@end--> <block cond="$li->html1_2_shadow == 'Y'">box-shadow:0 0 5px #330000; </block> }
+#html_area2 { width:{$li->html2_width}; background-color:{$li->html2_color}; text-align:left; <!--@if($li->html2_radius == '')-->-webkit-border-radius:10px;-moz-border-radius:10px; border-radius:10px;<!--@end--> <block cond="$li->html2_shadow == 'Y'">box-shadow:0 0 5px #330000; </block> }
+
+#fp-nav ul li .fp-tooltip { color:{$li->subtitle_color}; }
+
+#slidecaption { bottom:<!--@if($li->footer_show == 'Y')-->95<!--@else-->25<!--@end-->px }
+#moveSectionDown { bottom:<!--@if($li->footer_show == 'Y')-->65<!--@else-->15<!--@end-->px }
+
+<block cond="!$li->ani_user ==''">
+#fullpage .f_title { -webkit-animation-duration:5s; animation-duration:5s; -webkit-animation-fill-mode:both; animation-fill-mode:both; -webkit-animation-name:fadeInLeft; animation-name:fadeInLeft }
+#fullpage .f_subtitle,
+#fullpage .html_area { -webkit-animation-duration:5s; animation-duration:5s; -webkit-animation-fill-mode:both; animation-fill-mode:both; -webkit-animation-name:fadeInRight; animation-name:fadeInRight }
+</block>
+
+@media all and (max-width:479px) {
+.mf_section { padding-top:0px; }
+.f_title { font-size:1.3em; }
+.content_area { margin:10px auto; padding:0px; width:95%; }
+#html_area0, #html_area1_1, #html_area1_2, #html_area2 { width:95% }
+.intro { <!--@if($li->scroll_user == 'true')-->padding:50px 0<!--@end-->; }
+#slidecaption { bottom:25px }
+#moveSectionDown { bottom:15px }
+}
+</style>
+
+<style cond="$li->header_show == 'Y' || $li->footer_show == 'Y'">
+#header { background:url({$li->bg_img}) {$li->layout_bgimg_align} {$li->layout_bgimg_repeat} {$li->tbg_color}; background-position:50% {$li->layout_bgimg_top}%;}
+#footer { background:{$li->bbg_color}; }
+</style>
+
+<style cond="$li->fullpage_select == 'bgimg'">
+#section0{ <!--@if($li->bgimg_slide == 'Y')--><!--@else-->background-image:url({$li->section0_image}); background-color:{$li->section0_color};<!--@end--> }
+#section2{ background-image:url({$li->section2_image}); background-color:{$li->section2_color}; }
+#slide1{ background-image:url({$li->section1_1_image}); background-color:{$li->section1_color}; }
+#slide2{ background-image:url({$li->section1_2_image}); background-color:{$li->section1_color}; }
+#slide3{ background-image:url({$li->section1_3_image}); background-color:{$li->section1_color}; }
+</style>
+
+<!--[if IE]>
+	<script type="text/javascript">
+		 var console = { log:function() {} };
+	</script>
+<![endif]-->

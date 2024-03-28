@@ -1,0 +1,56 @@
+.amenu,.amenu * { box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; outline:0}
+.amenu { width:100%; position:relative; }
+
+.amenu ul { margin:0; padding:0; list-style:none}
+.amenu ul li { width:100%; display:block; float:left; position:relative}
+.amenu ul li a { width:100%; float:left; text-decoration:none; color:#f0f0f0; font-size:13px; background:#414956; white-space:nowrap; position:relative; overflow:hidden; -o-transition:color .2s linear,background .2s linear; -moz-transition:color .2s linear,background .2s linear; -webkit-transition:color .2s linear,background .2s linear; transition:color .2s linear,background .2s linear}
+.amenu>ul>li.active>a,.amenu>ul>li:hover>a { color:#fff; background:#3b424d}
+.amenu>ul>li>a { border-bottom:solid 1px #3b424d; border-top:solid 1px #39404a;}
+
+.amenu .submenu-indicator { float:right; right:22px; position:absolute; line-height:19px; font-size:20px; -o-transition:transform .3s linear; -moz-transition:transform .3s linear; -webkit-transition:transform .3s linear; -ms-transition:transform .3s linear}
+.amenu ul ul.submenu .submenu-indicator { line-height:16px}
+.amenu .submenu-indicator-minus>.submenu-indicator { -ms-transform:rotate(45deg); -moz-transform:rotate(45deg); -webkit-transform:rotate(45deg); transform:rotate(45deg)}
+
+.amenu ul ul.submenu,.amenu ul ul.submenu li ul.submenu { width:100%; position:static}
+.amenu ul ul.submenu li { clear:both; width:100%}
+.amenu ul ul.submenu li a { width:100%; float:left; font-size:11px; background:#383838; border-top:none; position:relative; border-left:solid 6px transparent; -o-transition:border .2s linear; -moz-transition:border .2s linear; -webkit-transition:border .2s linear; transition:border .2s linear}
+.amenu ul ul.submenu li:hover>a { border-left-color:#414956}
+.amenu ul ul.submenu>li>a { padding-left:30px}
+.amenu ul ul.submenu>li>ul.submenu>li>a { padding-left:45px}
+.amenu ul ul.submenu>li>ul.submenu>li>ul.submenu>li>a { padding-left:60px}
+.amenu ul li .amenu-label,.amenu ul ul.submenu li .amenu-label { min-width:20px; padding:1px 2px 1px 1px; position:absolute; right:18px; top:14px; font-size:11px; font-weight:800; color:#555; text-align:center; line-height:18px; background:#f0f0f0; border-radius:100%}
+.amenu ul ul.submenu li .amenu-label { top:12px}
+.ink { display:block; position:absolute; background:rgba(255,255,255,.3); border-radius:100%; -webkit-transform:scale(0); -moz-transform:scale(0); -ms-transform:scale(0); -o-transform:scale(0); transform:scale(0)}
+.animate-ink { -webkit-animation:ripple .5s linear; -moz-animation:ripple .5s linear; -ms-animation:ripple .5s linear; -o-animation:ripple .5s linear; animation:ripple .5s linear}
+
+@-webkit-keyframes ripple { 100% { opacity:0; -webkit-transform:scale(2.5) }}
+@-moz-keyframes ripple { 100% { opacity:0; -moz-transform:scale(2.5) }}
+@-o-keyframes ripple { 100% { opacity:0; -o-transform:scale(2.5) }}
+@keyframes ripple { 100% { opacity:0; transform:scale(2.5) }}
+
+.blue.amenu .amenu-footer,.blue.amenu .amenu-header,.blue.amenu ul li a { background:#4A89DC}
+.blue.amenu>ul>li.active>a,.blue.amenu>ul>li:hover>a { background:#3e82da}
+.blue.amenu>ul>li>a { border-bottom-color:#3e82da}
+.blue.amenu ul ul.submenu li:hover>a { border-left-color:#3e82da}
+
+.green.amenu .amenu-footer,.green.amenu .amenu-header,.green.amenu ul li a { background:#03A678}
+.green.amenu>ul>li.active>a,.green.amenu>ul>li:hover>a { background:#049372}
+.green.amenu>ul>li>a { border-bottom-color:#049372}
+.green.amenu ul ul.submenu li:hover>a { border-left-color:#049372}
+
+.red.amenu .amenu-footer,.red.amenu .amenu-header,.red.amenu ul li a { background:#ED5565}
+.red.amenu>ul>li.active>a,.red.amenu>ul>li:hover>a { background:#DA4453}
+.red.amenu>ul>li>a { border-bottom-color:#DA4453}
+.red.amenu ul ul.submenu li:hover>a { border-left-color:#DA4453}
+
+.white.amenu .amenu-footer,.white.amenu .amenu-header,.white.amenu ul li a { background:#fff; color:#555}
+.white.amenu>ul>li.active>a,.white.amenu>ul>li:hover>a { background:#f0f0f0}
+.white.amenu>ul>li>a { border-bottom-color:#f0f0f0}
+.white.amenu ul ul.submenu li:hover>a { border-left-color:#f0f0f0}
+.white.amenu ul ul.submenu li a { color:#f0f0f0}
+.white.amenu>ul>li>a>.ink { background:rgba(0,0,0,.1)}
+
+.black.amenu .amenu-footer,.black.amenu .amenu-header,.black.amenu ul li a { background:#292929}
+.black.amenu>ul>li.active>a,.black.amenu>ul>li:hover>a { background:#222}
+.black.amenu>ul>li>a { border-bottom-color:#1c1c1c}
+.black.amenu ul ul.submenu li:hover>a { border-left-color:#222}

@@ -1,0 +1,124 @@
+<include target="mf_style.html" />
+
+<ul id="menu" cond="$li->menu_user == 'Y'">
+	<li data-menuanchor="{$li->one_title}"><a href="#{$li->one_title}">{$li->one_title}</a></li>
+	<li data-menuanchor="{$li->two_title}"><a href="#{$li->two_title}">{$li->two_title}</a></li>
+	<li data-menuanchor="{$li->three_title}"><a href="#{$li->three_title}">{$li->three_title}</a></li>
+</ul>
+
+<block cond="$li->header_show == 'Y'"><include target="header.html" /></block>
+<block cond="$li->footer_show == 'Y' && $li->footer_location == 'Y'"><include target="footer.html" /></block>
+
+<div id="fullpage">
+	<block cond="$li->smart_menu == 'Y'"><include target="smenu.html" /></block>
+
+	<div class="mf_section" id="section0" cond="$li->use_section0 == 'Y'">
+		<block cond="$li->bgimg_slide == 'Y'"><include target="bgslide.html" /></block>
+		<div class="intro" style="margin-top:{$li->intro0_top}">
+			<h1 cond="$li->section0_title" class="f_title" style="font-size:{$li->title0_size}; color:{$li->title0_color};"><a href="{$li->title0_url}" style="color:#fff" class="pr_tooltip" pr_color="{$li->tooltip_color}" pr_position="{$li->tooltip_location}" title="{$li->title0}">{$li->section0_title}</a></h1>
+			<p cond="$li->section0_subtitle" class="f_subtitle" style="font-size:{$li->subtitle0_size}; color:{$li->subtitle0_color};">{$li->section0_subtitle}</p>
+			<div cond="$li->content0_show == 'Y'" class="content_area">
+			<block cond="$li->menu_p == ''"><include target="position.html" /></block>
+				{$content|noescape}
+			</div>
+			<table cond="$li->section0_html" class="html_area" id="html_area0"><tr><td>
+				<block cond="!Mobile::isMobileCheckByAgent()">{$li->section0_html}</block>
+				<block cond="Mobile::isMobileCheckByAgent()">
+					<!--@if($li->section0s_html)-->
+						{$li->section0s_html}
+					<!--@else-->
+						{$li->section0_html}
+					<!--@end-->
+				</block>
+			</td></tr></table>
+		</div>
+	</div>
+
+	<div class="mf_section" id="section1" cond="$li->use_section1 == 'Y'">
+		<div class="slide" id="slide1">
+			<div class="intro" style="margin-top:{$li->intro1_1_top}">
+				<h1 cond="$li->section1_1_title" class="f_title" style="font-size:{$li->title1_1_size}; color:{$li->title1_1_color};"><a href="{$li->title1_1_url}" style="color:#fff" class="pr_tooltip" pr_color="{$li->tooltip_color}" pr_position="{$li->tooltip_location}" title="{$li->title1_1}">{$li->section1_1_title}</a></h1>
+				<p cond="$li->section1_1_subtitle" class="f_subtitle" style="font-size:{$li->subtitle1_1_size}; color:{$li->subtitle1_1_color};">{$li->section1_1_subtitle}</p>
+				<div cond="$li->content1_show == 'Y'" class="content_area">
+				<block cond="$li->menu_p == ''"><include target="position.html" /></block>
+					{$content|noescape}
+				</div>
+				<table cond="$li->section1_1_html" class="html_area" id="html_area1_1"><tr><td>
+					<block cond="!Mobile::isMobileCheckByAgent()">{$li->section1_1_html}</block>
+					<block cond="Mobile::isMobileCheckByAgent()">
+						<!--@if($li->section1_1s_html)-->
+							{$li->section1_1s_html}
+						<!--@else-->
+							{$li->section1_1_html}
+						<!--@end-->
+					</block>
+				</td></tr></table>
+			</div>
+		</div>
+
+		<div class="slide" id="slide2" cond="$li->section1_2_html || $li->section1_2_title || $li->section1_2_subtitle">
+			<div class="intro" style="margin-top:{$li->intro1_2_top}">
+				<h1 cond="$li->section1_2_title" class="f_title" style="font-size:{$li->title1_2_size}; color:{$li->title1_2_color};"><a href="{$li->title1_2_url}" style="color:#fff" class="pr_tooltip" pr_color="{$li->tooltip_color}" pr_position="{$li->tooltip_location}" title="{$li->title1_2}">{$li->section1_2_title}</a></h1>
+				<p cond="$li->section1_2_subtitle" class="f_subtitle" style="font-size:{$li->subtitle1_2_size}; color:{$li->subtitle1_2_color};">{$li->section1_2_subtitle}</p>
+				<table cond="$li->section1_2_html" class="html_area" id="html_area1_2"><tr><td>
+					<block cond="!Mobile::isMobileCheckByAgent()">{$li->section1_2_html}</block>
+					<block cond="Mobile::isMobileCheckByAgent()">
+						<!--@if($li->section1_2s_html)-->
+							{$li->section1_2s_html}
+						<!--@else-->
+							{$li->section1_2_html}
+						<!--@end-->
+					</block>
+				</td></tr></table>
+			</div>
+		</div>
+
+		<div class="slide" id="slide3" cond="$li->section1_3_html || $li->section1_3_title || $li->section1_3_subtitle">
+			<div class="intro" style="margin-top:{$li->intro1_3_top}">
+				<h1 cond="$li->section1_3_title" class="f_title" style="font-size:{$li->title1_3_size}; color:{$li->title1_3_color};"><a href="{$li->title1_3_url}" style="color:#fff" class="pr_tooltip" pr_color="{$li->tooltip_color}" pr_position="{$li->tooltip_location}" title="{$li->title1_3}">{$li->section1_3_title}</a></h1>
+				<p cond="$li->section1_3_subtitle" class="f_subtitle" style="font-size:{$li->subtitle1_3_size}; color:{$li->subtitle1_3_color};">{$li->section1_3_subtitle}</p>
+				<table cond="$li->section1_3_html" class="html_area" id="html_area1_3"><tr><td>
+					<block cond="!Mobile::isMobileCheckByAgent()">{$li->section1_3_html}</block>
+					<block cond="Mobile::isMobileCheckByAgent()">
+						<!--@if($li->section1_3s_html)-->
+							{$li->section1_3s_html}
+						<!--@else-->
+							{$li->section1_3_html}
+						<!--@end-->
+					</block>
+				</td></tr></table>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="mf_section" id="section2" cond="$li->use_section2 == 'Y'">
+		<div class="intro" style="margin-top:{$li->intro2_top}">
+			<h1 cond="$li->section2_title" class="f_title" style="font-size:{$li->title2_size}; color:{$li->title2_color};"><a href="{$li->title2_url}" style="color:#fff" class="pr_tooltip" pr_color="{$li->tooltip_color}" pr_position="{$li->tooltip_location}" title="{$li->title2}">{$li->section2_title}</a></h1>
+			<p cond="$li->section2_subtitle" class="f_subtitle" style="font-size:{$li->subtitle2_size}; color:{$li->subtitle2_color};">{$li->section2_subtitle}</p>
+			<div cond="$li->content2_show == 'Y'" class="content_area">
+				<block cond="$li->menu_p == ''"><include target="position.html" /></block>
+				{$content|noescape}
+			</div>
+			<table cond="$li->section2_html" class="html_area" id="html_area2"><tr><td>
+				<block cond="!Mobile::isMobileCheckByAgent()">{$li->section2_html}</block>
+				<block cond="Mobile::isMobileCheckByAgent()">
+					<!--@if($li->section2s_html)-->
+						{$li->section2s_html}
+					<!--@else-->
+						{$li->section2_html}
+					<!--@end-->
+				</block>
+			</td></tr></table>
+			<block cond="$li->footer_show == 'Y' && $li->footer_location == 'N'"><include target="footer.html" /></block>
+		</div>
+	</div>
+
+</div>
+
+<div id="actions" cond="$li->control_arrows_user == 'true'">
+	<a id="moveSectionUp" href="#"></a>
+	<a id="moveSectionDown" href="#"></a>
+</div>
+
+<include target="mf_script.html" />
